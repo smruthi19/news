@@ -1,0 +1,15 @@
+const proxyUrl = "https://cors-anywhere.herokuapp.com/"
+const qInTitle = "apple";
+const from = "2021-06-15";
+const apiKey = "bc6ba5c090bc4fe492f395b955f50e0";
+const url = `${proxyUrl}https://newsapi.org/v2/everything?qInTitle=${qInTitle}&from=${from}language=en&apiKey=${apiKey}`;
+const request = new Request(url);
+
+fetch(request)
+  .then(response => response.json())
+  .then((news) => {
+    console.log(news);
+  })
+  .catch(error => {
+    console.log(error);
+  });
